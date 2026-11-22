@@ -1,0 +1,11 @@
+{
+  "name": "pato-caotico-online",
+  "version": "3.0.0",
+  "private": true,
+  "description": "Jogo multiplayer de escolhas secretas para 2 a 8 amigos",
+  "type": "module",
+  "engines": { "node": ">=22 <25" },
+  "scripts": { "start": "node server.js", "test": "node --test" },
+  "dependencies": { "express": "5.1.0", "socket.io": "4.8.1" },
+  "devDependencies": { "socket.io-client": "4.8.1" }
+}
