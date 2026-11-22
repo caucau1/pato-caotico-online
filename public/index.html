@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#11152b"><meta name="description" content="Coopere, roube e sobreviva ao caos. Um jogo online para 2 a 8 amigos."><title>Pato Caótico • Online</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🦆%3C/text%3E%3C/svg%3E"><link rel="stylesheet" href="/style.css"><script defer src="/socket.io/socket.io.js"></script><script defer src="/client.js"></script></head>
+<body>
+<header><a href="/" class="brand">🦆 PATO CAÓTICO <span>ONLINE</span></a><span id="connection" role="status">Conectando…</span></header>
+<main id="app"></main>
+<div id="notice" role="alert" hidden></div>
+<dialog id="rules"><div class="dialog-head"><h2>Manual de sobrevivência</h2><button id="close-rules" class="quiet">Fechar</button></div>
+<p>2 a 8 amigos. 12 rodadas. Quem terminar com mais moedas vence; empates dividem a vitória. Todos começam com 12 moedas, 1 escudo e 2 cargas de poder.</p>
+<h3>Decida em segredo</h3><p>Você tem 45 segundos. Confirme uma vez por rodada. Se o tempo acabar, seu pato coopera, sem poder e sem aliança. Patos desconectados continuam na partida.</p>
+<ul><li><b>🌱 Cooperar:</b> ganhe 3 + metade do grupo arredondada para cima. Se todos cooperarem, cada um ganha mais 2.</li><li><b>🗡️ Roubar:</b> escolha outro pato; tente levar 3 + um terço do grupo arredondado para baixo. Vários ladrões dividem o saldo disponível igualmente; o resto fica com a vítima.</li><li><b>🛡️ Proteger:</b> ganhe 2 e bloqueie todos os roubos contra outro pato nesta rodada. Você não pode proteger a si mesmo.</li></ul>
+<h3>Alianças, poderes e escudos</h3><p>Indique um aliado a cada rodada. Só vale se ele indicar você: ambos recebem 2. Se roubar seu aliado sem ser bloqueado, pagará multa de 4. As alianças e ações só aparecem na revelação.</p>
+<p>Use uma carga para <b>Casco extra</b> (+1 escudo, máximo 3) ou <b>Bolso secreto</b> (+5 moedas). O poder age antes das ações. Um escudo bloqueia todos os roubos daquela rodada e é consumido; proteção de outro pato bloqueia sem gastar escudo.</p>
+<p>Ordem: poderes → cooperação/proteção → bônus de todos cooperarem → alianças → roubos → evento. Roubos são processados por vítima, na ordem de entrada na sala; moedas recebidas antes podem entrar no saldo de roubos posteriores. Nenhum saldo fica negativo. O servidor sorteia um dos 12 eventos com chances iguais após as escolhas.</p>
+<h3>Conexão e sala</h3><p>Só o ADM inicia, com todos os 2–8 participantes conectados. Após 45 segundos fora, o ADM passa para um pato conectado; no lobby, o ausente sai. Durante a partida, sua vaga e escolhas ficam reservadas. Reabra no mesmo navegador para recuperar. Use uma aba por jogador; abas diferentes compartilham a sessão. A revanche volta ao lobby com os conectados.</p>
+<p>As salas ficam na memória do servidor. Reinícios, novas publicações ou suspensão da hospedagem encerram as salas. Uma sala vazia expira em até uma hora após a última atividade.</p>
+</dialog>
+<footer><span>Amizades em risco. Patos em paz.</span><button id="open-rules" class="quiet">Como jogar</button></footer>
+</body></html>
